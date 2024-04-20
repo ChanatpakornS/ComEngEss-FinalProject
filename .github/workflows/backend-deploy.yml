@@ -9,6 +9,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
   SERVER_PUBLIC_IP: ${{ secrets.AWS_PUBLIC_KEY }}
+  MONGO_URL: ${{ secrets.MONGO_URL }}
 
 jobs:
   deploy:
@@ -25,7 +26,7 @@ jobs:
           REPOSITORY: backend
           IMAGE_TAG: ${{ github.sha }}
         run: |-
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG backend/
+          docker build --build-arg MONGO_URL=${{ env.MONGO_URL }} -t $REGISTRY/$REPOSITORY:$IMAGE_TAG backend/
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
       - name: Deploy docker image to EC2
         env:

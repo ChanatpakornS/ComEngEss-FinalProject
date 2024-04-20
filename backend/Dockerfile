@@ -1,6 +1,8 @@
 FROM node:21-alpine3.18
 
-ENV MONGO_URL=mongodb+srv://Phumsiri:6530322721@gartuc.tgnijza.mongodb.net/Gartuc?retryWrites=true&w=majority
+ARG MONGO_URL
+
+ENV MONGO_URL=$MONGO_URL
 
 WORKDIR /app
 

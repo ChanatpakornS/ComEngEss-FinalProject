@@ -6,7 +6,7 @@ Members :
 - [Phumsiri](https://github.com/Phumsirii)
 - [BoomChanotai](https://github.com/boomchanotai)
 - [NongSunYakLaOok](https://github.com/Kchanatipz)
-- [ChanatpakornD](https://github.com/ChanatpakornD)
+- [ChanatpakornS](https://github.com/ChanatpakornS)
 
 Stack
 - Simple
